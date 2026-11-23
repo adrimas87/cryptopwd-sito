@@ -134,7 +134,7 @@
           <article class="tile wide reveal">
             <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/><path d="M12 12v5M9.5 14.5 12 12l2.5 2.5"/></svg></div>
             <h3>Sul tuo Google Drive</h3>
-            <p>Un unico file cifrato, nel tuo spazio. Nessun server nostro, nessun abbonamento. L'app vede solo i file che ha creato lei, non il resto del tuo Drive.</p>
+            <p>L'archivio cifrato vive nel tuo spazio. Nessun server nostro, nessun abbonamento. L'app vede solo i file che ha creato lei, non il resto del tuo Drive.</p>
           </article>
           <article class="tile reveal">
             <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.3 6.4M3 12A9 9 0 0 1 18.3 5.6"/><path d="M18 2v4h-4M6 22v-4h4"/></svg></div>
@@ -227,7 +227,7 @@
           <div class="spec-row"><dt>Derivazione chiave</dt><dd><code>PBKDF2-SHA256</code> · 600.000 iterazioni · salt casuale di 128 bit</dd></div>
           <div class="spec-row"><dt>Cifratura</dt><dd><code>AES-256-GCM</code> · IV casuale di 96 bit a ogni salvataggio · dati autenticati</dd></div>
           <div class="spec-row"><dt>Dove vive la chiave</dt><dd>Solo in memoria, come <code>CryptoKey</code> non esportabile. Cancellata al blocco.</dd></div>
-          <div class="spec-row"><dt>Cosa va su Drive</dt><dd>Il blocco cifrato e i parametri pubblici (salt, iterazioni). Nient'altro.</dd></div>
+          <div class="spec-row"><dt>Cosa va su Drive</dt><dd>L'archivio cifrato con i parametri pubblici (salt, iterazioni) e gli eventuali allegati, cifrati anch'essi. Nient'altro.</dd></div>
           <div class="spec-row"><dt>Sul dispositivo</dt><dd>Copia cifrata in IndexedDB, per l'uso offline.</dd></div>
           <div class="spec-row"><dt>Permessi Google</dt><dd><code>drive.file</code>: l'app vede solo i file creati da lei.</dd></div>
           <div class="spec-row"><dt>Tracciamento</dt><dd>Nessuno. Niente analytics, niente cookie di profilazione, niente pubblicità.</dd></div>

@@ -36,7 +36,7 @@
     <div class="wrap">
       <span class="eyebrow">Note legali</span>
       <h1>Informativa privacy e cookie</h1>
-      <p class="updated">Ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) · Ultimo aggiornamento: 18 novembre 2026</p>
+      <p class="updated">Ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) · Ultimo aggiornamento: 23 novembre 2026</p>
 
       <div class="box">
         <p><strong>In breve.</strong> CryptoPwd è progettato per non conoscere i tuoi dati. Le password sono cifrate sul tuo dispositivo con una chiave che possiedi solo tu. Non abbiamo server che le ricevono, non usiamo analytics, pubblicità o cookie di profilazione. L'archivio cifrato viene salvato nel <em>tuo</em> Google Drive, a cui l'app accede con il permesso più ristretto disponibile.</p>
@@ -91,19 +91,20 @@
       <p>Il titolare <strong>non riceve, non conserva e non può leggere</strong> questi dati: l'app non ha un server che li elabori. Il trattamento avviene interamente sotto il tuo controllo, sul tuo dispositivo e nel tuo spazio Google Drive. Per questo, rispetto al contenuto dell'archivio, il titolare non agisce come titolare né come responsabile del trattamento.</p>
 
       <h3>4.2 Copia locale sul dispositivo</h3>
-      <p>Per funzionare offline, l'app conserva nel browser (IndexedDB) una copia <strong>cifrata</strong> dell'archivio e alcune impostazioni (ad esempio il tempo di blocco automatico). Questi dati restano sul dispositivo e si eliminano cancellando i dati del sito o disinstallando l'app.</p>
+      <p>Per funzionare offline, l'app conserva nel browser (IndexedDB) una copia <strong>cifrata</strong> dell'archivio, alcune impostazioni (ad esempio il tempo di blocco automatico) e, se usi la sincronizzazione, l'indirizzo email dell'account Google collegato (vedi 4.3). Questi dati restano sul dispositivo e si eliminano cancellando i dati del sito o disinstallando l'app.</p>
 
       <h3>4.3 Sincronizzazione con Google Drive (facoltativa)</h3>
-      <p>Se attivi la sincronizzazione, l'app ti chiede di accedere con Google e di concedere il permesso <span class="mono">https://www.googleapis.com/auth/drive.file</span>. Con questo permesso l'app può vedere e modificare <strong>solo i file che ha creato lei</strong>: un unico file, <span class="mono">cryptopwd-vault.json</span>, che contiene l'archivio cifrato e i parametri pubblici di cifratura (salt, numero di iterazioni). L'app non può vedere i tuoi altri file, documenti o foto.</p>
-      <p>Il token di accesso rilasciato da Google è conservato <strong>solo nella memoria</strong> dell'app, scade dopo circa un'ora e viene usato esclusivamente per leggere e scrivere quel file. L'app non legge il tuo nome, la tua email o altre informazioni del profilo Google.</p>
+      <p>Se attivi la sincronizzazione, l'app ti chiede di accedere con Google e di concedere il permesso <span class="mono">https://www.googleapis.com/auth/drive.file</span>. Con questo permesso l'app può vedere e modificare <strong>solo i file che ha creato lei</strong>: il file <span class="mono">cryptopwd-vault.json</span>, che contiene l'archivio cifrato e i parametri pubblici di cifratura (salt, numero di iterazioni), e un file cifrato per ogni allegato (<span class="mono">cryptopwd-att-…</span>), se ne aggiungi. L'app non può vedere i tuoi altri file, documenti o foto.</p>
+      <p>Il token di accesso rilasciato da Google è conservato <strong>solo nella memoria</strong> dell'app, scade dopo circa un'ora e viene usato esclusivamente per leggere e scrivere quei file.</p>
+      <p>Dopo il primo accesso l'app legge da Google Drive l'<strong>indirizzo email</strong> dell'account collegato e lo conserva <strong>solo sul tuo dispositivo</strong>, per indicarlo a Google agli accessi successivi ed evitarti di scegliere ogni volta l'account. L'indirizzo non viene inviato al titolare né ad altri e viene cancellato quando scolleghi Google Drive o elimini i dati dell'app. L'app non legge il tuo nome né altre informazioni del profilo Google.</p>
       <p>Durante l'accesso, Google tratta i tuoi dati come titolare autonomo, secondo la propria <a href="https://policies.google.com/privacy?hl=it" rel="noopener">informativa privacy</a>.</p>
 
       <h2 id="google">5. Uso dei dati degli utenti Google</h2>
       <p>L'uso e il trasferimento ad altre applicazioni delle informazioni ricevute dalle API di Google da parte di CryptoPwd rispettano le <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Norme sui dati utente dei servizi API di Google</a> (Google API Services User Data Policy), compresi i requisiti di Uso limitato (Limited Use).</p>
       <ul>
-        <li><strong>Dati a cui l'app accede:</strong> solo il file <span class="mono">cryptopwd-vault.json</span> creato dall'app nel tuo Google Drive.</li>
-        <li><strong>Come vengono usati:</strong> esclusivamente per salvare e sincronizzare il tuo archivio cifrato tra i tuoi dispositivi, cioè la funzione che hai richiesto.</li>
-        <li><strong>Condivisione:</strong> i dati non vengono trasferiti, venduti né condivisi con nessuno. Il file viaggia direttamente tra il tuo dispositivo e Google Drive, senza passare da server del titolare.</li>
+        <li><strong>Dati a cui l'app accede:</strong> solo i file creati dall'app nel tuo Google Drive (l'archivio <span class="mono">cryptopwd-vault.json</span> e gli eventuali allegati cifrati) e l'indirizzo email dell'account collegato.</li>
+        <li><strong>Come vengono usati:</strong> i file, esclusivamente per salvare e sincronizzare il tuo archivio cifrato tra i tuoi dispositivi, cioè la funzione che hai richiesto; l'indirizzo email, solo per riproporre lo stesso account agli accessi successivi.</li>
+        <li><strong>Condivisione:</strong> i dati non vengono trasferiti, venduti né condivisi con nessuno. I file e l'indirizzo email restano tra il tuo dispositivo e Google Drive, senza passare da server del titolare.</li>
         <li><strong>Nessun altro uso:</strong> i dati non sono usati per pubblicità, profilazione, valutazioni di affidabilità creditizia né per addestrare modelli di intelligenza artificiale o di apprendimento automatico.</li>
         <li><strong>Nessuna lettura umana:</strong> nessuna persona legge i dati, che peraltro sono cifrati e illeggibili senza la tua password principale.</li>
         <li><strong>Revoca:</strong> puoi revocare il permesso in qualsiasi momento da <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</li>
@@ -121,7 +122,7 @@
 
       <h2 id="cookie">7. Cookie e archiviazione locale</h2>
       <p><strong>Il sito cryptopwd.it non usa cookie</strong>, né tecnici né di profilazione, e non usa strumenti di tracciamento di terze parti. Per questo non mostra un banner per il consenso.</p>
-      <p>L'app CryptoPwd usa l'archiviazione locale del browser (IndexedDB e cache del service worker) solo per funzionare: conservare l'archivio cifrato e i file dell'app per l'uso offline. Si tratta di strumenti strettamente necessari a fornire il servizio richiesto dall'utente, per i quali non è richiesto il consenso (art. 122 del Codice privacy, D.Lgs. 196/2003, e Linee guida del Garante del 10 giugno 2021).</p>
+      <p>L'app CryptoPwd usa l'archiviazione locale del browser (IndexedDB, localStorage e cache del service worker) solo per funzionare: conservare l'archivio cifrato e i file dell'app per l'uso offline e ricordare l'account Google collegato. Si tratta di strumenti strettamente necessari a fornire il servizio richiesto dall'utente, per i quali non è richiesto il consenso (art. 122 del Codice privacy, D.Lgs. 196/2003, e Linee guida del Garante del 10 giugno 2021).</p>
       <p>Se usi l'accesso con Google, la finestra di accesso è servita da Google (accounts.google.com), che può impostare i propri cookie tecnici per autenticarti. Questi cookie sono gestiti da Google secondo la sua <a href="https://policies.google.com/technologies/cookies?hl=it" rel="noopener">politica sui cookie</a>.</p>
 
       <h2 id="conservazione">8. Conservazione e cancellazione</h2>
