@@ -95,7 +95,7 @@
 
       <h3>4.3 Sincronizzazione con Google Drive (facoltativa)</h3>
       <p>Se attivi la sincronizzazione, l'app ti chiede di accedere con Google e di concedere il permesso <span class="mono">https://www.googleapis.com/auth/drive.file</span>. Con questo permesso l'app può vedere e modificare <strong>solo i file che ha creato lei</strong>: il file <span class="mono">cryptopwd-vault.json</span>, che contiene l'archivio cifrato e i parametri pubblici di cifratura (salt, numero di iterazioni), e un file cifrato per ogni allegato (<span class="mono">cryptopwd-att-…</span>), se ne aggiungi. L'app non può vedere i tuoi altri file, documenti o foto.</p>
-      <p>Il token di accesso rilasciato da Google è conservato <strong>solo nella memoria</strong> dell'app, scade dopo circa un'ora e viene usato esclusivamente per leggere e scrivere quei file.</p>
+      <p>Il token di accesso rilasciato da Google è conservato <strong>solo nella memoria di sessione</strong> del browser (sessionStorage), per non doverlo richiedere a ogni ricaricamento della pagina: scade dopo circa un'ora, viene cancellato chiudendo l'app o scollegando Google Drive e viene usato esclusivamente per leggere e scrivere quei file.</p>
       <p>Dopo il primo accesso l'app legge da Google Drive l'<strong>indirizzo email</strong> dell'account collegato e lo conserva <strong>solo sul tuo dispositivo</strong>, per indicarlo a Google agli accessi successivi ed evitarti di scegliere ogni volta l'account. L'indirizzo non viene inviato al titolare né ad altri e viene cancellato quando scolleghi Google Drive o elimini i dati dell'app. L'app non legge il tuo nome né altre informazioni del profilo Google.</p>
       <p>Durante l'accesso, Google tratta i tuoi dati come titolare autonomo, secondo la propria <a href="https://policies.google.com/privacy?hl=it" rel="noopener">informativa privacy</a>.</p>
 
@@ -122,7 +122,7 @@
 
       <h2 id="cookie">7. Cookie e archiviazione locale</h2>
       <p><strong>Il sito cryptopwd.it non usa cookie</strong>, né tecnici né di profilazione, e non usa strumenti di tracciamento di terze parti. Per questo non mostra un banner per il consenso.</p>
-      <p>L'app CryptoPwd usa l'archiviazione locale del browser (IndexedDB, localStorage e cache del service worker) solo per funzionare: conservare l'archivio cifrato e i file dell'app per l'uso offline e ricordare l'account Google collegato. Si tratta di strumenti strettamente necessari a fornire il servizio richiesto dall'utente, per i quali non è richiesto il consenso (art. 122 del Codice privacy, D.Lgs. 196/2003, e Linee guida del Garante del 10 giugno 2021).</p>
+      <p>L'app CryptoPwd usa l'archiviazione locale del browser (IndexedDB, localStorage, sessionStorage e cache del service worker) solo per funzionare: conservare l'archivio cifrato e i file dell'app per l'uso offline e ricordare l'account Google collegato. Si tratta di strumenti strettamente necessari a fornire il servizio richiesto dall'utente, per i quali non è richiesto il consenso (art. 122 del Codice privacy, D.Lgs. 196/2003, e Linee guida del Garante del 10 giugno 2021).</p>
       <p>Se usi l'accesso con Google, la finestra di accesso è servita da Google (accounts.google.com), che può impostare i propri cookie tecnici per autenticarti. Questi cookie sono gestiti da Google secondo la sua <a href="https://policies.google.com/technologies/cookies?hl=it" rel="noopener">politica sui cookie</a>.</p>
 
       <h2 id="conservazione">8. Conservazione e cancellazione</h2>
