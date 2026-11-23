@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="it" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CryptoPwd — Il gestore di password che cifra tutto sul tuo dispositivo</title>
+  <meta name="description" content="CryptoPwd è il gestore di password a conoscenza zero: cifratura AES-256 sul dispositivo, archivio sul tuo Google Drive, funziona offline su telefono, tablet e PC. Nessun account, nessun tracciamento.">
+  <meta name="theme-color" content="#04060c">
+  <link rel="canonical" href="https://cryptopwd.it/">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="CryptoPwd">
+  <meta property="og:title" content="CryptoPwd — Le tue password, solo tue">
+  <meta property="og:description" content="Cifratura AES-256 sul dispositivo, archivio sul tuo Google Drive, funziona offline. Nessuno vede le tue password, nemmeno noi.">
+  <meta property="og:url" content="https://cryptopwd.it/">
+  <meta property="og:image" content="https://cryptopwd.it/assets/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Vai al contenuto</a>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="CryptoPwd, home">
+        <img src="assets/icon.svg" alt="" width="30" height="30">CryptoPwd
+      </a>
+      <nav class="nav" id="nav" aria-label="Principale">
+        <a href="#funzioni">Funzioni</a>
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#sicurezza">Sicurezza</a>
+        <a href="#installa">Installa</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-cta" href="https://app.cryptopwd.it/">Apri l'app</a>
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Apri il menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow">Crittografia a conoscenza zero</span>
+          <h1>Le tue password.<br><span class="grad">Solo tue.</span></h1>
+          <p class="lead">CryptoPwd cifra tutto sul tuo dispositivo prima che lasci lo schermo. L'archivio vive sul <strong>tuo</strong> Google Drive, funziona anche offline e si sincronizza da solo su telefono, tablet e PC.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://app.cryptopwd.it/">
+              Inizia gratis
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#come-funziona">Scopri come funziona</a>
+          </div>
+          <div class="hero-meta">
+            <span>Nessun account</span>
+            <span>Nessun tracciamento</span>
+            <span>Codice pubblico</span>
+          </div>
+        </div>
+
+        <div class="vault-card reveal" aria-label="Esempio: tre password nell'archivio e il dato cifrato che viene salvato su Drive">
+          <div class="vault-inner">
+            <div class="vault-top" aria-hidden="true"><i></i><i></i><i></i><b>VAULT · SBLOCCATO</b></div>
+            <div class="entry">
+              <div class="entry-ico a" aria-hidden="true">B</div>
+              <div class="entry-txt"><strong>Home banking</strong><small>Personale · Banca</small></div>
+              <span class="entry-pwd" aria-label="password nascosta">••••••••••</span>
+            </div>
+            <div class="entry">
+              <div class="entry-ico b" aria-hidden="true">P</div>
+              <div class="entry-txt"><strong>Casella PEC</strong><small>Azienda · PEC</small></div>
+              <span class="entry-pwd" aria-label="password nascosta">••••••••••</span>
+            </div>
+            <div class="entry">
+              <div class="entry-ico c" aria-hidden="true">E</div>
+              <div class="entry-txt"><strong>Email</strong><small>Famiglia · Email</small></div>
+              <span class="entry-pwd" aria-label="password nascosta">••••••••••</span>
+            </div>
+            <div class="cipher-box" aria-hidden="true">
+              <div class="cipher-row"><span class="k">alg</span><span class="p">AES-256-GCM · PBKDF2 600k</span></div>
+              <div class="cipher-row"><span class="k">iv</span><span class="v" id="demo-iv">a3f1c09e44b27d18e05c6f92</span></div>
+              <div class="cipher-row"><span class="k">data</span><span class="v" id="demo-ct">Q2lmcmF0byBzdWwgZGlzcG9zaXRpdm8uIEdvb2dsZSB2ZWRlIHNvbG8gcXVlc3Rv</span></div>
+            </div>
+            <div class="vault-status"><span class="pulse"></span>Sincronizzato con Google Drive · cifrato</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span><b>AES-256-GCM</b> cifratura autenticata</span>
+        <span><b>PBKDF2-SHA256</b> 600.000 iterazioni</span>
+        <span><b>Salt 128 bit</b> casuale</span>
+        <span><b>IV 96 bit</b> nuovo a ogni salvataggio</span>
+        <span><b>WebCrypto</b> chiave non esportabile</span>
+        <span><b>drive.file</b> accesso minimo</span>
+        <span><b>Zero</b> librerie esterne</span>
+        <span><b>PWA</b> offline-first</span>
+        <span><b>AES-256-GCM</b> cifratura autenticata</span>
+        <span><b>PBKDF2-SHA256</b> 600.000 iterazioni</span>
+        <span><b>Salt 128 bit</b> casuale</span>
+        <span><b>IV 96 bit</b> nuovo a ogni salvataggio</span>
+        <span><b>WebCrypto</b> chiave non esportabile</span>
+        <span><b>drive.file</b> accesso minimo</span>
+        <span><b>Zero</b> librerie esterne</span>
+        <span><b>PWA</b> offline-first</span>
+      </div>
+    </div>
+
+    <!-- FUNZIONI -->
+    <section id="funzioni">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Funzioni</span>
+          <h2>Tutto quello che serve.<br><span class="muted">Niente di quello che non serve.</span></h2>
+          <p class="lead">Pensato per chi gestisce le password di sé, della famiglia e dell'azienda, ed è stanco di affidarle a un server sconosciuto.</p>
+        </div>
+
+        <div class="bento">
+          <article class="tile wide reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.4"/></svg></div>
+            <h3>Cifrato sul dispositivo</h3>
+            <p>Le password vengono cifrate con AES-256 prima di essere salvate o inviate. La chiave nasce dalla tua password principale e resta solo in memoria: quando l'app si blocca, sparisce.</p>
+          </article>
+          <article class="tile wide reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/><path d="M12 12v5M9.5 14.5 12 12l2.5 2.5"/></svg></div>
+            <h3>Sul tuo Google Drive</h3>
+            <p>Un unico file cifrato, nel tuo spazio. Nessun server nostro, nessun abbonamento. L'app vede solo i file che ha creato lei, non il resto del tuo Drive.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.3 6.4M3 12A9 9 0 0 1 18.3 5.6"/><path d="M18 2v4h-4M6 22v-4h4"/></svg></div>
+            <h3>Sincronizzazione intelligente</h3>
+            <p>Le modifiche fatte offline su più dispositivi vengono unite voce per voce. Le eliminazioni si propagano.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><path d="M3 3l18 18"/></svg></div>
+            <h3>Funziona offline</h3>
+            <p>Una copia cifrata resta su ogni dispositivo: le password si leggono anche in aereo o senza campo.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M3 3l18 18"/></svg></div>
+            <h3>Modalità riservata</h3>
+            <p>Per il desktop remoto o lo schermo condiviso: dati coperti, visibili solo tenendo premuto. Doppio Esc blocca tutto.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.6-3 3-4.8 6-4.8s5.4 1.8 6 4.8"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18.5 14.6c1.4.7 2.3 2.2 2.5 4.4"/></svg></div>
+            <h3>Soggetti e categorie</h3>
+            <p>Tu, i familiari, la tua azienda: ognuno con le sue categorie (Banca, Email, PEC…). Filtri istantanei.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l2-3h6l2 3h3v12H4z"/><path d="M9 13h6M12 10v6"/></svg></div>
+            <h3>Generatore robusto</h3>
+            <p>Password casuali e lunghe con un tocco, generate dal motore crittografico del dispositivo.</p>
+          </article>
+          <article class="tile reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="4" rx="1.2"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="M12 11v4l2.5 1.5"/></svg></div>
+            <h3>Appunti a tempo</h3>
+            <p>Copi la password e dopo 30 secondi gli appunti si svuotano da soli. Blocco automatico per inattività.</p>
+          </article>
+          <article class="tile full reveal">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+            <h3>I tuoi dati restano portabili</h3>
+            <p>Importa da Chrome, Firefox, Bitwarden e da qualsiasi file CSV. Esporta in ogni momento un backup cifrato. Nessuna gabbia: se un giorno vorrai andare altrove, porti tutto con te.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME FUNZIONA -->
+    <section id="come-funziona">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Architettura</span>
+          <h2>Un file cifrato.<br><span class="grad">Ovunque tu sia.</span></h2>
+          <p class="lead">Ogni dispositivo ha la sua copia cifrata. Google Drive fa da punto d'incontro. La decifratura avviene solo sullo schermo che hai in mano.</p>
+        </div>
+
+        <div class="flow reveal" role="img" aria-label="Schema: il telefono e il PC hanno ciascuno una copia locale cifrata e si sincronizzano con un unico file cifrato su Google Drive">
+          <div class="node">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+            <strong>Telefono</strong>
+            <small>copia locale · cifrata</small>
+          </div>
+          <div class="link" aria-hidden="true"></div>
+          <div class="node cloud">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 19a5 5 0 0 1-.6-9.96A6 6 0 0 1 18 10a4.5 4.5 0 0 1-.5 9H7z"/><rect x="9.5" y="12.5" width="5" height="4" rx="1"/><path d="M10.5 12.5v-1a1.5 1.5 0 0 1 3 0v1"/></svg>
+            <strong>Google Drive</strong>
+            <small>cryptopwd-vault.json · cifrato</small>
+          </div>
+          <div class="link" aria-hidden="true"></div>
+          <div class="node">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <strong>PC</strong>
+            <small>copia locale · cifrata</small>
+          </div>
+        </div>
+        <p class="flow-note reveal">↑ la decifratura avviene <b>solo qui</b>, sul dispositivo, con la tua password principale</p>
+      </div>
+    </section>
+
+    <!-- SICUREZZA -->
+    <section id="sicurezza">
+      <div class="wrap split">
+        <div class="reveal">
+          <span class="eyebrow">Sicurezza</span>
+          <h2>Progettato perché nessuno possa leggerle.<br><span class="grad">Neanche noi.</span></h2>
+          <p class="lead">CryptoPwd non ha un server che custodisce i tuoi dati. Google, l'hosting dell'app e chiunque altro vedono solo blocchi di dati illeggibili.</p>
+          <ul class="checklist">
+            <li><span><strong>Content-Security-Policy restrittiva</strong>: la pagina non carica codice da terze parti.</span></li>
+            <li><span><strong>Nessuna libreria esterna</strong>: solo le API crittografiche native del browser.</span></li>
+            <li><span><strong>Manomissioni rilevate</strong>: la cifratura autenticata rifiuta dati alterati.</span></li>
+            <li><span><strong>Accesso minimo a Drive</strong>: lo scope <span class="mono">drive.file</span> vede solo il file dell'app.</span></li>
+          </ul>
+          <p class="warning"><strong>La password principale non è recuperabile.</strong> È il prezzo della vera riservatezza: nessuno ha una copia della tua chiave. Scrivila su carta e conservala in un luogo sicuro.</p>
+        </div>
+
+        <dl class="spec reveal">
+          <div class="spec-row"><dt>Derivazione chiave</dt><dd><code>PBKDF2-SHA256</code> · 600.000 iterazioni · salt casuale di 128 bit</dd></div>
+          <div class="spec-row"><dt>Cifratura</dt><dd><code>AES-256-GCM</code> · IV casuale di 96 bit a ogni salvataggio · dati autenticati</dd></div>
+          <div class="spec-row"><dt>Dove vive la chiave</dt><dd>Solo in memoria, come <code>CryptoKey</code> non esportabile. Cancellata al blocco.</dd></div>
+          <div class="spec-row"><dt>Cosa va su Drive</dt><dd>Il blocco cifrato e i parametri pubblici (salt, iterazioni). Nient'altro.</dd></div>
+          <div class="spec-row"><dt>Sul dispositivo</dt><dd>Copia cifrata in IndexedDB, per l'uso offline.</dd></div>
+          <div class="spec-row"><dt>Permessi Google</dt><dd><code>drive.file</code>: l'app vede solo i file creati da lei.</dd></div>
+          <div class="spec-row"><dt>Tracciamento</dt><dd>Nessuno. Niente analytics, niente cookie di profilazione, niente pubblicità.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- INSTALLA -->
+    <section id="installa">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inizia</span>
+          <h2>Pronto in un minuto.<br><span class="muted">Senza app store.</span></h2>
+          <p class="lead">CryptoPwd è una web app installabile (PWA): si apre dal browser e si aggiunge alla schermata Home come un'app nativa.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Apri l'app</h3><p>Vai su <span class="mono">app.cryptopwd.it</span> dal dispositivo che preferisci.</p></div>
+          <div class="step reveal"><h3>Crea il tuo archivio</h3><p>Scegli una password principale robusta e collega il tuo Google Drive.</p></div>
+          <div class="step reveal"><h3>Aggiungi gli altri dispositivi</h3><p>Scegli "Ripristina da Google Drive", stesso account, stessa password principale. Fatto.</p></div>
+        </div>
+        <div class="platforms">
+          <div class="platform reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+            <div><strong>Android</strong><span>Chrome → menu ⋮ → Installa app</span></div>
+          </div>
+          <div class="platform reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M10 5h4"/></svg>
+            <div><strong>iPhone e iPad</strong><span>Safari → Condividi → Aggiungi alla schermata Home</span></div>
+          </div>
+          <div class="platform reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <div><strong>Windows, Mac, Linux</strong><span>Chrome o Edge → icona di installazione nella barra</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Domande frequenti</span>
+          <h2>Le risposte, in chiaro.</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>CryptoPwd può vedere le mie password?</summary>
+            <p>No. Le password vengono cifrate sul tuo dispositivo con una chiave derivata dalla tua password principale, che non lascia mai il dispositivo. Noi non abbiamo server che ricevono i tuoi dati e Google conserva solo un file illeggibile.</p>
+          </details>
+          <details>
+            <summary>Cosa succede se dimentico la password principale?</summary>
+            <p>I dati non sono recuperabili, da nessuno. È una scelta di progetto: se esistesse un modo per recuperarla, esisterebbe anche un modo per rubarla. Conserva la password principale in un luogo sicuro.</p>
+          </details>
+          <details>
+            <summary>Perché serve Google Drive?</summary>
+            <p>Per sincronizzare i dispositivi senza un server intermedio. L'app usa il permesso più ristretto possibile (<span class="mono">drive.file</span>): può vedere e modificare solo il file che ha creato, non i tuoi documenti, le foto o gli altri file.</p>
+          </details>
+          <details>
+            <summary>Posso usarlo senza Google Drive?</summary>
+            <p>Sì. Puoi tenere l'archivio solo sul dispositivo ed esportare manualmente un backup cifrato. Perdi la sincronizzazione automatica tra dispositivi.</p>
+          </details>
+          <details>
+            <summary>Funziona senza connessione?</summary>
+            <p>Sì. Ogni dispositivo mantiene una copia cifrata locale. Le modifiche fatte offline vengono sincronizzate e unite appena torna la rete.</p>
+          </details>
+          <details>
+            <summary>Quanto costa?</summary>
+            <p>CryptoPwd è gratuito. Lo spazio occupato su Google Drive è minimo: pochi kilobyte anche con centinaia di password.</p>
+          </details>
+          <details>
+            <summary>Posso importare le password che ho già?</summary>
+            <p>Sì, da un file CSV esportato da Chrome, Firefox, Bitwarden e dalla maggior parte dei gestori di password. Ricordati di eliminare il file CSV dopo l'importazione: contiene le password in chiaro.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="wrap">
+        <div class="cta-box reveal">
+          <h2>Riprendi il controllo<br><span class="grad">delle tue password.</span></h2>
+          <p class="lead center">Gratis, senza account, senza tracciamento. Cifrato dal primo istante.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://app.cryptopwd.it/">
+              Apri CryptoPwd
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="30" height="30">CryptoPwd</a>
+          <p>Il gestore di password a conoscenza zero. Cifrato sul dispositivo, sincronizzato sul tuo Drive.</p>
+        </div>
+        <div>
+          <h4>Prodotto</h4>
+          <ul>
+            <li><a href="https://app.cryptopwd.it/">Apri l'app</a></li>
+            <li><a href="#sicurezza">Sicurezza</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://github.com/adrimas87/cryptopwd">Codice sorgente</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Note legali</h4>
+          <ul>
+            <li><a href="privacy/">Informativa privacy</a></li>
+            <li><a href="privacy/#cookie">Cookie</a></li>
+            <li><a href="termini/">Termini di servizio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> <em class="fill">[Nome e cognome / Ragione sociale]</em> · <em class="fill">[P.IVA / C.F.]</em></span>
+        <span>Questo sito non usa cookie né strumenti di tracciamento.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
